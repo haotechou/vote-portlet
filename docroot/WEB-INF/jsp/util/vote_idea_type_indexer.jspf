@@ -1,0 +1,59 @@
+<%--
+/**
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+--%>
+
+<%!
+public static class VoteIdeaTypeIndexer extends BaseAlloyIndexer {
+
+	public static VoteIdeaTypeIndexer getInstance() {
+		return _instance;
+	}
+
+	@Override
+	protected Document doGetDocument(Object obj) throws Exception {
+		VoteIdeaType voteIdeaType = (VoteIdeaType) obj;
+
+		Document document = getBaseModelDocument(portletId, voteIdeaType);
+
+		document.addKeyword("ideaTypeId", voteIdeaType.getVoteIdeaTypeId());
+		document.addKeyword("name", voteIdeaType.getName());
+
+		return document;
+	}
+
+	@Override
+	protected Summary doGetSummary(Document document, Locale locale, String snippet, PortletURL portletURL) {
+		String title = document.get(Field.ENTRY_CLASS_PK);
+
+		String content = null;
+
+		portletURL.setParameter("mvcPath", "/WEB-INF/jsp/vote/views/idea_types/view.jsp");
+
+		String ideaTypeId = document.get(Field.ENTRY_CLASS_PK);
+
+		portletURL.setParameter("id", ideaTypeId);
+
+		return new Summary(title, content, portletURL);
+	}
+
+	private VoteIdeaTypeIndexer() {
+		setClassName(VoteIdeaType.class.getName());
+		setPortletId(PortletKeys.VOTE);
+	}
+
+	private static VoteIdeaTypeIndexer _instance = new VoteIdeaTypeIndexer();
+
+}
+%>

@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="com.liferay.vote" auto-namespace-tables="false">
+	<author>Howie Chou</author>
+	<namespace>Vote</namespace>
+	<entity name="VoteBallot" local-service="true" remote-service="false">
+
+		<!-- PK fields -->
+
+		<column name="voteBallotId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="voteIdeaTypeId" type="long" />
+		<column name="name" type="String" />
+		<column name="description" type="String" />
+		<column name="endDate" type="Date" />
+	</entity>
+	<entity name="VoteEntry" local-service="true" remote-service="false">
+
+		<!-- PK fields -->
+
+		<column name="voteEntryId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="voteBallotId" type="long" />
+	</entity>
+	<entity name="VoteIdea" local-service="true" remote-service="false">
+
+		<!-- PK fields -->
+
+		<column name="voteIdeaId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="voteIdeaTypeId" type="long" />
+		<column name="name" type="String" />
+		<column name="description" type="String" />
+	</entity>
+	<entity name="VoteIdeaType" local-service="true" remote-service="false">
+
+		<!-- PK fields -->
+
+		<column name="voteIdeaTypeId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="name" type="String" />
+	</entity>
+</service-builder>

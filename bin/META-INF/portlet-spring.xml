@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.liferay.vote.service.VoteBallotLocalService" class="com.liferay.vote.service.impl.VoteBallotLocalServiceImpl" />
+	<bean id="com.liferay.vote.service.persistence.VoteBallotPersistence" class="com.liferay.vote.service.persistence.VoteBallotPersistenceImpl" parent="basePersistence" />
+	<bean id="com.liferay.vote.service.VoteEntryLocalService" class="com.liferay.vote.service.impl.VoteEntryLocalServiceImpl" />
+	<bean id="com.liferay.vote.service.persistence.VoteEntryPersistence" class="com.liferay.vote.service.persistence.VoteEntryPersistenceImpl" parent="basePersistence" />
+	<bean id="com.liferay.vote.service.VoteIdeaLocalService" class="com.liferay.vote.service.impl.VoteIdeaLocalServiceImpl" />
+	<bean id="com.liferay.vote.service.persistence.VoteIdeaPersistence" class="com.liferay.vote.service.persistence.VoteIdeaPersistenceImpl" parent="basePersistence" />
+	<bean id="com.liferay.vote.service.VoteIdeaTypeLocalService" class="com.liferay.vote.service.impl.VoteIdeaTypeLocalServiceImpl" />
+	<bean id="com.liferay.vote.service.persistence.VoteIdeaTypePersistence" class="com.liferay.vote.service.persistence.VoteIdeaTypePersistenceImpl" parent="basePersistence" />
+</beans>

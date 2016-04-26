@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.liferay.vote.model.VoteBallot">
+		<field name="voteBallotId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="voteIdeaTypeId" type="long" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="endDate" type="Date" />
+	</model>
+	<model name="com.liferay.vote.model.VoteEntry">
+		<field name="voteEntryId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="voteBallotId" type="long" />
+	</model>
+	<model name="com.liferay.vote.model.VoteIdea">
+		<field name="voteIdeaId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="voteIdeaTypeId" type="long" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+	</model>
+	<model name="com.liferay.vote.model.VoteIdeaType">
+		<field name="voteIdeaTypeId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+	</model>
+</model-hints>
